@@ -40,6 +40,10 @@ const onProductClick = (product) => {
         ? document.getElementById(`${product}Layer`).style.display = 'none'
         : document.getElementById(`${product}Layer`).style.display = 'inline';
 
+    isSelected
+        ? usePulse(product)
+        : useNoPulse(product);
+
     configuration.totalPrice = isSelected
       ? configuration.totalPrice - price
       : configuration.totalPrice + price;
@@ -54,6 +58,16 @@ const onProductClick = (product) => {
 
     updateTotal();
 };
+
+function usePulse(product) {
+    document.getElementById(`img_${product}`).classList.add('pulse');
+    document.getElementById(`img_${product}`).classList.remove('no_pulse');
+}
+
+function useNoPulse(product) {
+    document.getElementById(`img_${product}`).classList.add('no_pulse');
+    document.getElementById(`img_${product}`).classList.remove('pulse');
+}
 
 const getPrivatBankUrl = () => {
     const totalPrise = configuration.totalPrice;

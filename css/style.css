@@ -375,6 +375,12 @@ section {
   border-radius: 50%;
 }
 
+.no_pulse {
+  box-shadow: 0 10px 50px rgba(79, 126, 189, 1.00);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 @keyframes shadow-pulse
 {
   0% {
